@@ -13,7 +13,7 @@ public class Joining {
         names.add("Dominik");
 
         String joined = names.stream()
-                .collect(joining());
+                .collect(joining(", "));
         System.out.println(joined);
 
     }

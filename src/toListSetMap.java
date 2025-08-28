@@ -26,12 +26,17 @@ public class toListSetMap {
 
         Country country = new Country("Poland","Warsaw");
         Country country1 = new Country("Spain","Madrid");
+        Country country2 = new Country("Slovakia","Bratislava");
+        Country country3 = new Country("Sweden","Stockholm");
 
         List<Country> countries = new ArrayList<>();
         countries.add(country);
         countries.add(country1);
+        countries.add(country2);
+        countries.add(country3);
 
         Map<String, String> countriesMap = countries.stream()
+                .filter(countryFromMap -> countryFromMap.getName().startsWith("S"))
                 .collect(toMap(Country::getName, Country::getCapital));
         System.out.println(countriesMap);
 

@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.*;
 
 public class CountingSummingAveraging {
     public static void run(){
@@ -20,6 +21,10 @@ public class CountingSummingAveraging {
         Integer collect1 = people.stream()
                 .collect(summingInt(Person::getAge));
         System.out.println(collect1);
+
+        Double collect2 = people.stream()
+                .collect(Collectors.summingDouble(Person::getHeight));
+        System.out.println(collect2);
 
     }
     public static void main(String[] args) {

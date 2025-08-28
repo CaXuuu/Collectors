@@ -23,8 +23,10 @@ public class CountingSummingAveraging {
         System.out.println(collect1);
 
         Double collect2 = people.stream()
-                .collect(Collectors.summingDouble(Person::getHeight));
+                .collect(Collectors.averagingDouble(Person::getHeight));
         System.out.println(collect2);
+
+
 
     }
     public static void main(String[] args) {

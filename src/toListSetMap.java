@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static java.util.stream.Collectors.*;
 
@@ -26,6 +23,18 @@ public class toListSetMap {
                 .filter(team -> team.startsWith("S"))
                 .collect(toSet()); // nie pojawiaja sie te same druzyny
         System.out.println(setOfTeamsStartingWithS);
+
+        Country country = new Country("Poland","Warsaw");
+        Country country1 = new Country("Spain","Madrid");
+
+        List<Country> countries = new ArrayList<>();
+        countries.add(country);
+        countries.add(country1);
+
+        Map<String, String> countriesMap = countries.stream()
+                .collect(toMap(Country::getName, Country::getCapital));
+        System.out.println(countriesMap);
+
     }
     public static void main(String[] args) {
 
